@@ -1,0 +1,131 @@
+{
+  "name": "jbotcan",
+  "version": "0.0.1",
+  "description": "Lojban logical language - get in touch with documentation and live speakers",
+  "license": "MIT",
+  "private": true,
+  "keywords": [
+    "lojban",
+    "language",
+    "programming",
+    "prolog"
+  ],
+  "scripts": {
+    "start:dev": "babel-node ./tools/dev_server.js",
+    "start": "npm run start:dev",
+    "clean": "rimraf build",
+    "build:bundle": "cross-env NODE_ENV=production webpack --config ./tools/webpack.prod.config.js",
+    "build:static": "cross-env NODE_ENV=production babel-node ./tools/build_static_entry.js",
+    "build": "npm run clean && npm run build:bundle && npm run build:static",
+    "publish": "npm run build ; cd build ; git init ; git add . ; git commit -m 'cnino versiio' ; git remote add origin https://github.com/La-Lojban/la-lojban.github.io.git ; git push -f origin master ; cd ..",
+    "push": "git add . ; git commit -m 'fix' ; git push",
+    "copy": "cp -avr build ~/public_html/jbotcan"
+  },
+  "plate_config": {
+    "website": "http://la-lojban.github.io"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "rules": {
+      "strict": [
+        2,
+        "never"
+      ],
+      "new-cap": 0,
+      "global-require": 0,
+      "react/require-extension": 0,
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ]
+    }
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "classnames": "^2.2.5",
+    "compression-webpack-plugin": "^1.0.0",
+    "history": "^3.2.0",
+    "html-webpack-plugin": "^2.30.1",
+    "normalize.css": "^5.0.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-addons-css-transition-group": "^15.6.0",
+    "react-addons-transition-group": "^15.6.0",
+    "react-bootstrap": "^0.31.3",
+    "react-classname-module": "^0.1.1",
+    "react-dom": "^15.6.1",
+    "react-fastclick": "^2.1.2",
+    "react-google-tag-manager": "^2.1.0",
+    "react-helmet": "^3.2.2",
+    "react-motion": "^0.5.1",
+    "react-router": "^3.0.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-restore-scroll": "0.0.1",
+    "react-router-scroll": "^0.4.1",
+    "react-static-webpack-plugin": "^2.1.0",
+    "reactstrap": "^4.8.0",
+    "simple-react-bootstrap": "^0.2.7"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.2",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.0",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0",
+    "express": "^4.17.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "image-webpack-loader": "^3.0.0",
+    "json-loader": "^0.5.4",
+    "lodash": "^4.17.15",
+    "mkdirp": "^0.5.1",
+    "postcss-functions": "^2.1.1",
+    "postcss-import": "^8.2.0",
+    "postcss-loader": "^1.1.0",
+    "precss": "^1.4.0",
+    "redbox-react": "^1.3.3",
+    "rimraf": "^2.5.4",
+    "rucksack-css": "^0.8.6",
+    "sitemap": "^1.8.2",
+    "style-loader": "^0.13.1",
+    "stylelint": "^7.5.0",
+    "stylelint-config-standard": "^14.0.0",
+    "to-rem": "^0.1.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.3",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.2",
+    "webpack-isomorphic-tools": "^2.6.4"
+  },
+  "author": "Yannik Schweinzer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webyak/react-static-plate"
+  }
+}

@@ -1,0 +1,98 @@
+html {
+  height: 100%;
+}
+
+html body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1001;
+  /*background-color: #4C4;*/
+  /*max-height: 50px;*/
+}
+
+.content {
+  position: absolute;
+  max-height: calc(100% - 40px);
+  /*overflow-y: scroll;*/
+  /*padding: 0px 10%;*/
+  /*border-top: 48px solid transparent;*/
+  overflow-y: auto;
+  display: block;
+  width: 100%;
+  min-height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  text-align: center;
+  background-color: #f0f4e1;
+  /*background: #222222 linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent) !important;
+  background-size: 40px 40px !important;*/
+  /*overflow: auto;*/
+}
+
+@media (min-width: 768px) {
+  .content {
+    margin-top: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    /*border-top: 48px solid transparent;*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .content {
+    margin-top: 38px;
+    /*border-top: 16px solid transparent;*/
+  }
+}
+
+.content-inner-alma {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  max-width: 700px;
+  padding: 0px 15px 15px 15px;
+  margin-bottom: 20px;
+  border-color: #ad9393;
+  border-style: solid;
+  border-width: 0px 1px 1px 1px;
+}
+
+
+/*
+@media (max-width: 767px) {
+  .content-inner-alma {
+
+  }
+}*/
+
+.logo {
+  margin-top: -3px;
+  margin-left: 5px;
+  height: 48px;
+  float: left;
+  position: absolute;
+}
+
+.logo_text {
+  vertical-align: middle;
+  margin-left: 65px;
+  /*height: 50px;*/
+}
+
+.navbar{
+  padding: 0px;
+}
